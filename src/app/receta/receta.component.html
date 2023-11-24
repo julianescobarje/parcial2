@@ -9,8 +9,8 @@
     de {{ getTotalOpinions() }} opiniones **
   </p>
   <div class="row">
-    <div class="col-4 my-3" *ngFor="let r of recetas">
-      <div class="card mb-3 p-2" style="width: 20rem; height: 28rem">
+    <div class="col-4 my-3" *ngFor="let r of recetas" (click)="onSelected(r)">
+      <div class="card mb-3 p-2" style="width: 20rem; height: 24rem">
         <h5 class="card-title p-1">{{ r.nombre }}</h5>
         <img src="{{ r.imagen }}" class="card-img-top" alt="..." />
         <div class="card-body">
@@ -22,13 +22,6 @@
             Duración: {{ r.duracion }} | Dificultad: {{ r.dificultad }}
           </p>
           <p class="card-text">Por: {{ r.autorReceta }}</p>
-          <a
-            href="#"
-            class="btn"
-            style="background-color: #f16194"
-            (click)="onSelected(r)"
-            >Ver más</a
-          >
         </div>
       </div>
     </div>
